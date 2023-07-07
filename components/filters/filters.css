@@ -1,0 +1,32 @@
+.filters {
+    align-items: center;
+    display: flex;
+}
+
+.filters label {
+    font-weight: bold;
+    margin-right:1em;
+}
+
+.filters select {
+    background-color: transparent;
+    border-bottom:1px solid #333;
+    color:#fff;
+    margin-right: 1em;
+    min-width: 150px;
+    padding:0.25em 0;
+}
+
+body.theme-light .filters select {
+    border-color: #202020;
+    color:#202020;
+}
+
+.filters select option {
+    background-color: transparent;
+    color:#202020;
+}
+
+body.theme-light .filters select option {
+    color:#202020;
+}

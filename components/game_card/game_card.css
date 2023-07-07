@@ -1,0 +1,129 @@
+.game__card {
+    border-radius: 12px;
+    background-color: #202020;
+    position: relative;
+}
+
+.game__card__img {
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.game__card__img > div {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+    transition: padding-bottom 0.2s;
+}
+
+.game__card__img > div img {
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+}
+
+.game__card__info {
+    padding:16px 16px 24px;
+}
+
+
+.game__card__meta_score span {
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 0.825em;
+    font-weight: 700;
+    min-width:32px;
+    padding: 2px 0;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+}
+
+.meta_rating--green {
+    color:#6dc849;
+    border-color: #6dc849;
+}
+
+.meta_rating--orange {
+    color:orange;
+    border-color: orange;
+}
+
+.game__card__info h4 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    width: 75%;
+}
+
+.game__card__info h4 a:hover {
+    opacity: 0.5;
+    transition: 0.3s opacity ease;
+}
+
+.game__card__more {
+    color:#f0f0f0;
+    font-size:0.825em;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s;
+}
+
+.game__card__more > div {
+   overflow: hidden;
+}
+
+.game__card:hover .game__card__more {
+    grid-template-rows: 1fr;
+}
+
+.game__card a {
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.game__card--row {
+    display: flex;
+    gap:2em;
+    margin-bottom:2em;
+    max-width:1200px;
+}
+
+.game__card--row .game__card__img {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    max-width:330px;
+}
+
+.game__card--row .game__card__info {
+    width:100%;
+}
+
+.game__card--row .game__card__more {
+    font-size:1em;
+   grid-template-rows: 1fr;
+}
+
+body.theme-light .game__card {
+    background-color: #e0e0e0;
+    transition: 0.3s background-color ease;
+}
+
+body.theme-light  .game__card__more {
+    color:#202020;
+}
+
