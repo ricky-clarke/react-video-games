@@ -20,7 +20,8 @@ const Header = () => {
                 <div className='flex gap-5 items-center'>
                     <nav className='navigation mr-8'>
                         <Link href="/">Home</Link>
-                        <Link href="/latest-releases">Latest releases</Link>
+                        <Link href="/latest-releases/">Latest</Link>
+                        <Link href="/coming-soon/">Coming soon</Link>
                     </nav>
                     <SearchForm />
                     </div>

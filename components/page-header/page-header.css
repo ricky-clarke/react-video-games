@@ -1,6 +1,14 @@
 .page_header h1 {
-    font-size: 60px;
-    line-height: 74px;
+    font-size: 40px;
     font-weight: 700;
-    margin-bottom:0.25em;
+    margin-bottom:0.5em;
+    line-height: 40px;
+}
+
+@media (min-width:768px) {
+    .page_header h1 {
+        font-size: 60px;
+        line-height: 75px;
+        margin-bottom:0.25em;
+    }
 }

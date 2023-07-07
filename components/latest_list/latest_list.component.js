@@ -6,17 +6,17 @@ import Masonry from 'react-masonry-css'
 import globalContext from "../../context/global-context";
 import '../filters/filters.css';
 
-const HighestRatedList = () => {
+const LatestList = () => {
 
     const { state } = useContext(globalContext);
     const [game, HighestRatedHandler] = useState([]);
-    const [order, sortOrderHandler] = useState('2');
+
 
     useEffect(() => {
     
       const fetchData = async () => {
         try {
-          const response = await fetch(`/api/highest-rated/${order}`);
+          const response = await fetch(`/api/latest`);
           const game = await response.json();
           HighestRatedHandler(game);
         } catch (error) {
@@ -27,25 +27,7 @@ const HighestRatedList = () => {
       fetchData();
     }, []);
 
-
-    const platformHandleChange = (e) => {
-        const order = e.target.value;
-        sortOrderHandler(order);
-    }
-
-    // useEffect(() => {
-    //   const fetchData = async () => {
-    //     try {
-    //       const response = await fetch(`/api/highest-rated/${order}`);
-    //       const game = await response.json();
-    //       HighestRatedHandler(game);
-    //     } catch (error) {
-    //       console.log(error)
-    //     }
-    //   };
-  
-    //   fetchData();
-    // }, [game, HighestRatedHandler]);
+    console.log(game)
 
     const breakpointColumnsObj = {
       default: 4,
@@ -56,18 +38,6 @@ const HighestRatedList = () => {
 
     return ( 
         <>
-
-          <div className="filters my-8">
-            <label>Sort</label>
-            <select name="" onChange={platformHandleChange}>
-                <option default value="0">Platform</option>
-                <option value="1">PC</option>
-                <option value="2">Playstation</option>
-                <option value="3">Xbox</option>
-                <option value="4">Nintendo</option>
-            </select>
-
-            </div>
 
          { state.displayButton === 'grid' ? 
 
@@ -125,4 +95,4 @@ const HighestRatedList = () => {
      );
 }
  
-export default HighestRatedList;
+export default LatestList;

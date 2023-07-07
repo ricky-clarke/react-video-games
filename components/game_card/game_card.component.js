@@ -27,7 +27,7 @@ const card_type = display == 'game__card--row' ? 'game__card--row' : 'game__card
                 <div className="game__card__info">
                     <div className="flex justify-between items-start">
                         <h4>{name}</h4>
-                        <div className="game__card__meta_score" title="Metascore"><span className={`meta_rating--`+meta_rating_color}>{meta_rating}</span></div>
+                    {meta_rating && <div className="game__card__meta_score" title="Metascore"><span className={`meta_rating--`+meta_rating_color}>{meta_rating}</span></div> }
                     </div>
                     <div className="game__card__more">
                         <div>
