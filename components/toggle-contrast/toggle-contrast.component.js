@@ -1,8 +1,6 @@
 import {  useContext } from 'react';
 import { globalContext } from '../../context/global-context';
 
-import './toggle-contrast.css';
-
 const ToggleContrast = () => {
 
    const { state, dispatch } = useContext(globalContext);
@@ -26,11 +24,11 @@ const ToggleContrast = () => {
             <div className='toggle_buttons flex gap-4'>
               <button
               onClick={toggleLightHandler}
-              className={`toggle_button ${state.contrastButton === 'light' ? 'toggle_button--active' : ''}`}>Light</button>
+              className={`toggle_button ${state.contrastButton === 'light' ? 'button--active' : ''}`}>Light</button>
 
               <button
               onClick={toggleDarkHandler}
-              className={`toggle_button ${state.contrastButton === 'dark' ? 'toggle_button--active' : ''}`}>Dark</button>
+              className={`toggle_button ${state.contrastButton === 'dark' ? 'button--active' : ''}`}>Dark</button>
             </div>
         </>
      );

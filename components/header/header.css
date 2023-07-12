@@ -1,5 +1,6 @@
 header.page__container {
     padding-block: 2em;
+    position: relative;
   }
 
 .navigation {

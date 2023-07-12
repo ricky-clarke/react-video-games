@@ -11,7 +11,9 @@ export default function LastestReleases() {
                 <meta name='description' content='Games to be released within the last month'/>
             </Head>
 			<PageHeader title="Latest releases" intro="Released within the last 30 days" />
-			<LatestList />
+            <div className="full_container">
+                <LatestList />
+            </div>
         </>
      );
 

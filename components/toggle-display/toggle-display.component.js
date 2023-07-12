@@ -1,7 +1,6 @@
 'use client';
 import {  useContext } from 'react';
 import { globalContext } from '../../context/global-context';
-import '../toggle-contrast/toggle-contrast.css';
 
 const ToggleDisplay= () => {
 
@@ -23,14 +22,14 @@ const ToggleDisplay= () => {
 
     return ( 
         <>
-            <div className='toggle_buttons flex gap-4'>
+            <div className='toggle_buttons flex  gap-4'>
               <button
               onClick={toggleGridHandler}
-              className={`toggle_button ${state.displayButton === 'grid' ? 'toggle_button--active' : ''}`}>Grid</button>
+              className={`toggle_button ${state.displayButton === 'grid' ? 'button--active' : ''}`}>Grid</button>
 
               <button
               onClick={toggleRowHandler}
-              className={`toggle_button ${state.displayButton === 'row' ? 'toggle_button--active' : ''}`}>Row</button>
+              className={`toggle_button ${state.displayButton === 'row' ? 'button--active' : ''}`}>Row</button>
             </div>
         </>
      );

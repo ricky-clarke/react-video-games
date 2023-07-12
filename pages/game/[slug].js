@@ -31,18 +31,27 @@ useEffect(() => {
    year: "numeric"
  })
 
+
   return (
           <>
-
           <PageHeader title={game.items?.name} intro=""/>
-            <div className="flex single_game__grid">
+            
+            <div className="flex single_game__grid full_container full_container--page">
               <div className="w-7/12">
 
               {game.items?.background_image &&  
-              <Image src={game.items?.background_image} alt="" width="1000" height="500" loading="eager"/> }
-
+                <Image
+                src={game.items?.background_image}
+                alt=""
+                width="1000"
+                height="500"
+                loading="eager"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto'
+                }}
+                /> }
               {game.items?.background_image_additional && <Image src={game.items?.background_image_additional} alt="" width="1000" height="500" />}
-
                 <GameScreenshots />
               </div>
               <div className="w-5/12 px-10">
@@ -59,9 +68,9 @@ useEffect(() => {
                               )
                           })
                         }</div>
-                      <div><span>Metacritic rating</span> <span>{game.items?.metacritic}</span></div>
-                      <div><span>Released</span> <span>{formattedDate}</span></div>
-                    { game.items?.developers[0]?.name ? <div><span>Developer</span><span>{game.items?.developers[0]?.name}</span></div> : null }
+                      {game.items?.metacritic && <div><span>Metacritic rating</span> <span>{game.items?.metacritic}</span></div> }
+                    <div><span>Released</span> <span>{game.items?.released ? formattedDate : '-'}</span></div>
+                    { game.items?.developers[0]?.name && <div><span>Developer</span><span>{game.items?.developers[0]?.name}</span></div>}
                       <div><span>Publisher</span><span>
                         {game.items && game.items?.publishers.map((publisher, i) => {
                             return( 
@@ -86,6 +95,10 @@ useEffect(() => {
                   </div>
               </div>
             </div>
+            {/* <div className="game_bg" style={{ backgroundImage: `url(${game.items?.background_image})`}}></div>
+            <div className="game_bg">
+                <Image src={game.items?.background_image} alt="" width="2000" height="400" priority={true} />
+            </div> */}
       </>
   )
 }

@@ -4,9 +4,9 @@ const PageHeader = ( { title, intro }) => {
 
     return ( 
         <>
-        <div className='page_header'>
+        <div className='page_header full_container'>
                <h1>{title}</h1>
-               <p className="mb-5">{intro}</p>
+               { intro && <p>{intro}</p> }
           </div>
         </>
      );
