@@ -23,9 +23,6 @@ useEffect(() => {
     fetchData();
 }, []);
 
- // console.log(getPlatforms.results[1].platforms[1].name)
-
- // console.log(getPlatforms.results[1].platforms[0].name)
 
     return ( 
         <>
@@ -73,8 +70,6 @@ useEffect(() => {
                             return(
                                 // <option>{platform.platforms[0].name}</option>
                                 platform.platforms?.map((child, count) => {
-
-                                   // console.log(platform.platforms[0].name)
 
                                     return (
                                          <option key={count}>{child.name} - {test}</option>

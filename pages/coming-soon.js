@@ -6,17 +6,18 @@ import PageHeader from "../components/page-header/page-header.component";
 
 export default function Upcoming() {
 
+    // Get dates and format
     const currentDate = new Date();
+    const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1; // Adding 1 because getMonth() returns zero-based index
     const current_month = month.toString().padStart(2, '0');
 
+    // States
     const [monthlyGames, GetMonthlyGames] =  useState(''); // Default
     const [monthSelected, MonthSelectedHandler] = useState(null); // When month selected
     const [newGame, MonthlyGamesHandler] = useState([]) // Get games from selected month
     const [dateActive, dateActiveHandler] = useState(null); // Set button to active
-
-    const [dataActiveFullMonth, dataActiveFullMonthHandler] = useState(null)
-
+    const [dataActiveFullMonth, dataActiveFullMonthHandler] = useState(null);
 
     // Will run whenever the 'currentMonth' state changes - get monthly game list
     useEffect(() => {
@@ -47,11 +48,15 @@ export default function Upcoming() {
 
     // Update state on click
     const dateClick = (event) => {
-        const selected_month = event.target.value;
-        const selected_month_name = event.target.getAttribute('data');
-        MonthSelectedHandler(selected_month);
-        dateActiveHandler(selected_month);
-        dataActiveFullMonthHandler(selected_month_name)
+
+        const target = event.target;
+
+        // const selected_month_dates = event.target.getAttribute('dates');
+
+        MonthSelectedHandler(target.getAttribute('dates'));
+        dateActiveHandler(target.value);
+
+        dataActiveFullMonthHandler(target.getAttribute('month') + ' ' + target.getAttribute('year'))
 
         // Remove button--current class from current month button
         const current_month_btn_id = document.getElementById('date_button--'+current_month);
@@ -85,23 +90,28 @@ export default function Upcoming() {
                 <meta name='description' content='Games to be released within the next month'/>
             </Head>
 			<PageHeader title="Coming soon" intro={`Released in ${monthSelected ? dataActiveFullMonth : 'Released in the next 30 days'} `}/>
-
+        
             <div className="full_container">
-                <div className="flex gap-2 mb-7">    
+                <div className="flex flex-wrap gap-2 mb-7">    
                     {getDates && getDates?.map((dates, i) => {
 
-                            const str = dates.month;
-                            const firstThreeLetters = str.substring(0, 3);
+                        const str = dates.month;
+                        const firstThreeLetters = str.substring(0, 3);
+                        const get_year = dates.value > currentDate.getMonth() ? year : year + 1;
+                        const get_next_year = dates.value < currentDate.getMonth() ? year + 1 : '';
+                        const release_date = (`${get_year}-${dates.value}`);
 
                             return (
                                 <button
                                 key={i}
-                                data={dates.month}
+                                dates= {release_date}
+                                month={str}
+                                year={get_next_year}
                                 id={`date_button--${dates.value}`}
                                 className={`toggle_button ${isActive(dates.value)}`}
                                 value={dates.value}
                                 onClick={dateClick}>
-                                    {firstThreeLetters}
+                                {firstThreeLetters}
                                 </button>
                             )
                         })

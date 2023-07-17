@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import './game_card.css'
+import { motion } from "framer-motion";
 
+const GameCard = ({ game_info, display }) => {
 
-const GameCard = ({ display, name, meta_rating, img, parent_platforms, release_date, genre, slug, id }) => {
-
-const meta_rating_color = meta_rating >= '80' ? 'green' : 'orange';
-const card_type = display == 'game__card--row' ? 'game__card--row' : 'game__card--grid';
+const meta_rating_color = game_info.metacritic >= '80' ? 'green' : 'orange';
+ const card_type = display == 'game__card--row' ? 'game__card--row' : 'game__card--grid';
 
  // Format the date
- const date = new Date(release_date)
+ const date = new Date(game_info.release_date)
  const formattedDate = date.toLocaleDateString("en-GB", {
    day: "numeric",
    month: "long",
@@ -18,21 +18,26 @@ const card_type = display == 'game__card--row' ? 'game__card--row' : 'game__card
 
     return ( 
         <>
+        <motion.div
+            initial={{ opacity: 0.1, marginTop: 150}}
+            whileInView={{ opacity: 1, marginTop: 0 }}
+            transition={{ duration: 0.8}}
+            viewport={{ once: true }}>
             <div className={`game__card ${card_type}`}>
                 <div className='game__card__img'>
                     <div>
-                       { img && <Image src={img} alt="" width="280" height="155" /> }
+                       { game_info.background_image && <Image src={game_info.background_image} alt="" width="280" height="155" /> }
                     </div>
                 </div>
                 <div className="game__card__info">
                     <div className="flex justify-between items-start">
-                        <h4>{name}</h4>
-                    {meta_rating && <div className="game__card__meta_score" title="Metascore"><span className={`meta_rating--`+meta_rating_color}>{meta_rating}</span></div> }
+                        <h4>{game_info.name}</h4>
+                        {game_info.metacritic && <div className="game__card__meta_score" title="Metascore"><span className={`meta_rating--`+meta_rating_color}>{game_info.metacritic}</span></div> }
                     </div>
                     <div className="game__card__more">
                         <div>
                             <div className="game__card__meta flex mt-5 mb-4">
-                                    {parent_platforms && parent_platforms?.map((platform, i) => {
+                                    {game_info.parent_platforms && game_info.parent_platforms?.map((platform, i) => {
                                     return( 
                                     <div key={i} className={`game__card__platform game__card__platform--` + platform.platform.slug}></div>
                                     )
@@ -43,7 +48,7 @@ const card_type = display == 'game__card--row' ? 'game__card--row' : 'game__card
                             <div className="flex">
                                 <span>Genre:</span>
                                 <span className="flex flex-wrap">
-                                    {genre && genre?.map((genre, i) => {
+                                    {game_info.genres && game_info.genres?.map((genre, i) => {
                                         return( 
                                         <span key={i} className="ml-2">{genre.name}</span>
                                         )
@@ -54,11 +59,10 @@ const card_type = display == 'game__card--row' ? 'game__card--row' : 'game__card
                         </div>
                     </div>
                 </div>
-
-                <Link href={{pathname: `/game/${slug}` }}></Link>
-
+                <Link href={{pathname: `/game/${game_info.slug}` }} scroll={false}></Link>
             </div>
-           
+        </motion.div>
+
         </>
      );
 }

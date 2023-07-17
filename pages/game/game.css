@@ -24,11 +24,6 @@
 
 .single_game__grid {
      background-color: #151515; 
-    /* padding-top:3em; */
-}
-
-.single_game__grid img {
-   
 }
 
 .single_game__grid img {
@@ -86,8 +81,8 @@
     border-top:1px solid #333;
     color:#f0f0f0;
     font-size:1em;
-    margin-top:2em;
-    padding-top:2em;
+    margin:2em 0;
+    padding:2em 0;
 }
 
 body.theme-light .single_game__meta {

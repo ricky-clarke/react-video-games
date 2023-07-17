@@ -105,13 +105,15 @@ main {
 }
 
 .toggle_buttons {
-  background-color: #202020;
+  /* background-color: #202020; */
+  background-color: #323232;
   border-radius: 6px;
   padding:0.5em 1em;
 }
 
 button {
-  background-color: #202020;
+  /* background-color: #202020; */
+  background-color: #323232;
   border-radius: 6px;
   padding:0.5em 1em;
 }

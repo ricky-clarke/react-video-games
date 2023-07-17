@@ -1,104 +1,92 @@
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react";
 import PageHeader from "../../components/page-header/page-header.component"
 import Image from "next/image";
 import GameScreenshots from "../../components/game-screenshots/game-screenshots.components";
 import './game.css'
 
-export default function Game() {
+export default function Game( { data }) {
 
-const router = useRouter();
-const [game, GetGameInfo] = useState([]);
-
-useEffect(() => {
-  if(router.isReady){
-    const slug = router.query.slug;
-    async function fetchData() {
-      const result = await fetch(`/api/game/${slug}`)
-      const game = await result.json();
-      GetGameInfo(game);
-    }
-      fetchData();
-  }
-}, [router.isReady]);
-
-
-   // Format the date
- const date = new Date(game.items?.released)
+  // Format the date
+ const date = new Date(data.released)
  const formattedDate = date.toLocaleDateString("en-GB", {
    day: "numeric",
    month: "long",
    year: "numeric"
  })
 
-
-  return (
-          <>
-          <PageHeader title={game.items?.name} intro=""/>
-            
-            <div className="flex single_game__grid full_container full_container--page">
-              <div className="w-7/12">
-
-              {game.items?.background_image &&  
-                <Image
-                src={game.items?.background_image}
-                alt=""
-                width="1000"
-                height="500"
-                loading="eager"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto'
-                }}
-                /> }
-              {game.items?.background_image_additional && <Image src={game.items?.background_image_additional} alt="" width="1000" height="500" />}
-                <GameScreenshots />
-              </div>
-              <div className="w-5/12 px-10">
-                  <div className="sticky top-5">
-                    <h2>About</h2>
-                    <div className="game_grid__about">
-                      <div dangerouslySetInnerHTML={{ __html: game.items?.description }}></div>
-                    </div>
-                    <div className="single_game__meta">
-                      <div className="flex justify-start mb-4">
-                        {game.items && game.items?.parent_platforms.map((platform, i) => {
-                              return( 
-                              <div key={i} className={`game__card__platform game__card__platform--` + platform.platform.slug}></div>
-                              )
-                          })
-                        }</div>
-                      {game.items?.metacritic && <div><span>Metacritic rating</span> <span>{game.items?.metacritic}</span></div> }
-                    <div><span>Released</span> <span>{game.items?.released ? formattedDate : '-'}</span></div>
-                    { game.items?.developers[0]?.name && <div><span>Developer</span><span>{game.items?.developers[0]?.name}</span></div>}
-                      <div><span>Publisher</span><span>
-                        {game.items && game.items?.publishers.map((publisher, i) => {
-                            return( 
-                            <span key={i} className="ml-2">{publisher.name}</span>
-                            )
-                            })
-                          }  
-                        </span>
+  return(
+      <>
+        <PageHeader title={data.name} intro=""/>
+        <div className="flex single_game__grid full_container full_container--page">
+                <div className="w-7/12">
+                {data.background_image &&  
+                  <Image
+                  src={data.background_image}
+                  alt=""
+                  width="1000"
+                  height="500"
+                  loading="eager"
+                  style={{
+                    maxWidth: '100%',
+                    height: 'auto'
+                  }}
+                  /> }
+                {data.background_image_additional && <Image src={data.background_image_additional} alt="" width="1000" height="500" />}
+                  <GameScreenshots />
+                </div>
+                <div className="w-5/12 px-10">
+                    <div className="sticky top-5">
+                      <h2>About</h2>
+                      <div className="game_grid__about">
+                        <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
                       </div>
-                      <div>
-                          <span>Genre</span><span>
-                            {game.items && game.items?.genres.map((genre, i) => {
+                      <div className="single_game__meta">
+                        <div className="flex justify-start mb-4">
+                          {data.parent_platforms && data.parent_platforms.map((platform, i) => {
+                                return( 
+                                <div key={i} className={`game__card__platform game__card__platform--` + platform.platform.slug}></div>
+                                )
+                            })
+                          }</div>
+                        {data.metacritic && <div><span>Metacritic rating</span> <span>{data.metacritic}</span></div> }
+                      <div><span>Released</span> <span>{data.released ? formattedDate : '-'}</span></div>
+                      {data.developers[0]?.name && <div><span>Developer</span><span>{data.developers[0]?.name}</span></div>}
+                        <div><span>Publisher</span><span>
+                          {data.publishers.map((publisher, i) => {
                               return( 
-                              <span key={i} className="ml-2">{genre.name}</span>
+                              <span key={i} className="ml-2">{publisher.name}</span>
                               )
                               })
                             }  
-                        </span>
+                          </span>
+                        </div>
+                        <div>
+                            <span>Genre</span><span>
+                              {data.genres && data.genres.map((genre, i) => {
+                                return( 
+                                <span key={i} className="ml-2">{genre.name}</span>
+                                )
+                                })
+                              }  
+                          </span>
+                        </div>
+                      {data.website ? <div><span>Website</span><span><a href={data.website} target="_blank">Visit website</a></span></div> : null }
                       </div>
-                    {game.items?.website ? <div><span>Website</span><span><a href={game.items?.website} target="_blank">Visit website</a></span></div> : null }
                     </div>
-                  </div>
+                </div>
               </div>
-            </div>
-            {/* <div className="game_bg" style={{ backgroundImage: `url(${game.items?.background_image})`}}></div>
-            <div className="game_bg">
-                <Image src={game.items?.background_image} alt="" width="2000" height="400" priority={true} />
-            </div> */}
       </>
   )
+}
+
+
+export async function getServerSideProps(context) {
+
+  const slug = context.query.slug;
+  const client_id = process.env.RAWG_API_KEY;
+
+  const res = await fetch(`https://api.rawg.io/api/games/${slug}?key=${client_id}`);
+
+  const data = await res.json()
+ 
+  return { props: { data } }
 }

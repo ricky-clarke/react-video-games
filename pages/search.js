@@ -26,7 +26,9 @@ export default function Search() {
   return (
       <>
           <PageHeader title={`Search results: ${storage}`} intro=""/>
-          <SearchResultList search_term={storage} />
+          <div className="full_container">
+            <SearchResultList search_term={storage} />
+          </div>
       </>
   )
 }

@@ -20,12 +20,18 @@ const Header = () => {
                         <Link href="/">Home</Link>
                         <Link href="/latest-releases/">Latest</Link>
                         <Link href="/coming-soon/">Coming soon</Link>
+                        <div className="md:hidden">
+                        { router.pathname.includes('game') ? '' : <ToggleDisplay /> }
+                        <ToggleContrast />
+                        </div>
                     </nav>
                     <SearchForm />
                     </div>
                     <div className='flex gap-5 items-center'>
-                       { router.pathname.includes('game') ? '' : <ToggleDisplay /> }
-                        <ToggleContrast />
+                       <div className='hidden md:flex gap-5'>
+                            { router.pathname.includes('game') ? '' : <ToggleDisplay /> }
+                            <ToggleContrast />
+                        </div>
                         <Hamburger />
                     </div>
                   
