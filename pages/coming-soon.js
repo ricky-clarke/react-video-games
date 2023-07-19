@@ -59,8 +59,7 @@ export default function Upcoming() {
         dataActiveFullMonthHandler(target.getAttribute('month') + ' ' + target.getAttribute('year'))
 
         // Remove button--current class from current month button
-        const current_month_btn_id = document.getElementById('date_button--'+current_month);
-        current_month_btn_id.classList.remove('button--current');
+         document.getElementById('date_button--'+current_month).classList.remove('button--current');
     }
 
     // Set button state

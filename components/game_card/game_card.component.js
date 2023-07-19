@@ -9,13 +9,13 @@ const meta_rating_color = game_info.metacritic >= '80' ? 'green' : 'orange';
  const card_type = display == 'game__card--row' ? 'game__card--row' : 'game__card--grid';
 
  // Format the date
- const date = new Date(game_info.release_date)
+ const date = new Date(game_info.released)
  const formattedDate = date.toLocaleDateString("en-GB", {
    day: "numeric",
    month: "long",
    year: "numeric"
  })
-
+ 
     return ( 
         <>
         <motion.div
