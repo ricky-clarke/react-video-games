@@ -5,7 +5,7 @@ import Header from '../components/header/header.component';
 // import Footer from '../components/footer/footer.component';
 import '../app/globals.css'
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps  }) {
 
     const router = useRouter();
    
@@ -13,16 +13,16 @@ export default function MyApp({ Component, pageProps }) {
         <>
         <GlobalStateProvider>
         <Header />
-          <AnimatePresence mode='wait'>
+          <AnimatePresence mode="wait">
               <motion.div
                     key={router.route}
                     initial={{ x: -50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       exit={{ x: -50, opacity: 0 }}
                       transition={{
-                        delay: 0.1,
+                        delay: 0.2,
                         type: "tween",
-                        duration: 0.2
+                        duration: 0.3
                       }}
                       >
                   <div className='page__container'>

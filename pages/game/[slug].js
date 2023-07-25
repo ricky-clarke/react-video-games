@@ -1,7 +1,7 @@
 import PageHeader from "../../components/page-header/page-header.component"
 import Image from "next/image";
 import GameScreenshots from "../../components/game-screenshots/game-screenshots.components";
-import './game.css'
+// import './game.css'
 
 export default function Game( { data }) {
 

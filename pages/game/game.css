@@ -1,4 +1,4 @@
-.game_bg {
+/* .game_bg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,7 +19,6 @@
     position: absolute;
     top: 0;
     width: 100%;
-    /* z-index:-1; */
 }
 
 .single_game__grid {
@@ -50,22 +49,19 @@
     padding-right:2em;
 }
 
-  /* width */
+  /* width 
   .game_grid__about::-webkit-scrollbar {
     width: 3px;
 }
 
-/* Track */
 .game_grid__about::-webkit-scrollbar-track {
     background: #fff;
 }
 
-/* Handle */
 .game_grid__about::-webkit-scrollbar-thumb {
     background: #333;
 }
 
-/* Handle on hover */
 .game_grid__about::-webkit-scrollbar-thumb:hover {
     background: gold;
 }
@@ -99,4 +95,4 @@ body.theme-light .single_game__meta {
     display: flex;
     justify-content: space-between;
     margin-bottom:0.25em;
-}
+} */

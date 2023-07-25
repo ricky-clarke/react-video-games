@@ -139,3 +139,243 @@ body.theme-light .toggle_buttons,
 body.theme-light button {
   background-color: #ccc;
 }
+
+
+.game__card {
+  border-radius: 12px;
+  background-color: #202020;
+  position: relative;
+}
+
+.game__card__img {
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.game__card__img > div {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+  transition: padding-bottom 0.2s;
+}
+
+.game__card__img > div img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.game__card__info {
+  padding:16px 16px 24px;
+}
+
+.game__card__meta {
+  display:flex;
+  margin:1em 0;
+}
+
+.game__card__meta_score span {
+  border: 1px solid;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.825em;
+  font-weight: 700;
+  min-width:32px;
+  padding: 2px 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+}
+
+.meta_rating--green {
+  color:#6dc849;
+  border-color: #6dc849;
+}
+
+.meta_rating--orange {
+  color:orange;
+  border-color: orange;
+}
+
+.game__card__info h4 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 0;
+  overflow: hidden;
+  padding-bottom: 2px;
+  text-overflow: ellipsis;
+  width: 75%;
+}
+
+.game__card__info h4 a:hover {
+  opacity: 0.5;
+  transition: 0.3s opacity ease;
+}
+
+.game__card__more {
+  color:#f0f0f0;
+  font-size:0.825em;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s;
+}
+
+.game__card__more > div {
+ overflow: hidden;
+}
+
+.game__card:hover .game__card__more {
+  grid-template-rows: 1fr;
+}
+
+.game__card a {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.game__card--row {
+  display: flex;
+  gap:2em;
+  margin-bottom:2em;
+  max-width:1200px;
+}
+
+.game__card--row .game__card__img {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  max-width:330px;
+}
+
+.game__card--row .game__card__info {
+  width:100%;
+}
+
+.game__card--row .game__card__more {
+  font-size:1em;
+ grid-template-rows: 1fr;
+}
+
+body.theme-light .game__card {
+  background-color: #e0e0e0;
+  transition: 0.3s background-color ease;
+}
+
+body.theme-light  .game__card__more {
+  color:#202020;
+}
+
+
+/* Single game*/
+
+.game_bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
+  inset: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index:-1;
+}
+
+.game_bg:after {
+  background: rgb(21,21,21);
+  background: linear-gradient(0deg, rgba(21,21,21,1) 19%, rgba(21,21,21,0.8155637254901961) 77%, rgba(21,21,21,0) 100%);
+  content:"";
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* z-index:-1; */
+}
+
+.single_game__grid {
+   background-color: #151515; 
+}
+
+.single_game__grid img {
+  border-radius: 12px;
+  margin-bottom:2em; 
+  width: 100%;
+}
+
+.single_game__grid h2 {
+  font-size:2.5em;
+  font-weight: 700;
+  margin:0 0 0.25em 0;
+}
+
+.single_game__grid h3 {
+  font-size:1.5em;
+  font-weight: 700;
+  margin:0 0 0.25em 0;
+}
+
+.game_grid__about {
+  max-height: 355px;
+  overflow-y: auto;
+  padding-right:2em;
+}
+
+/* width */
+.game_grid__about::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.game_grid__about::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+.game_grid__about::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Handle on hover */
+.game_grid__about::-webkit-scrollbar-thumb:hover {
+  background: gold;
+}
+
+.game_grid__about p {
+  font-size:1.1em;    
+  line-height: 1.6em;
+  margin:0 0 1em 0;
+  white-space: break-spaces;
+}
+
+.single_game__meta {
+  border-top:1px solid #333;
+  color:#f0f0f0;
+  font-size:1em;
+  margin:2em 0;
+  padding:2em 0;
+}
+
+body.theme-light .single_game__meta {
+  color:#202020;
+}
+
+.single_game__meta .game__card__platform {
+  height: 25px;
+  margin-right: 1em;
+  width: 25px;
+}
+
+.single_game__meta > div:not(:first-child) {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:0.25em;
+}

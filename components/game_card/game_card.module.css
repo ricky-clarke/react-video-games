@@ -1,4 +1,4 @@
-/* .game__card {
+.game__card {
     border-radius: 12px;
     background-color: #202020;
     position: relative;
@@ -32,6 +32,10 @@
     padding:16px 16px 24px;
 }
 
+.game__card__meta {
+    display:flex;
+    margin:1em 0;
+}
 
 .game__card__meta_score span {
     border: 1px solid;
@@ -126,4 +130,4 @@ body.theme-light .game__card {
 body.theme-light  .game__card__more {
     color:#202020;
 }
- */
+

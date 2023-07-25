@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-///import './game_card.css'
+// import './game_card.css'
+// import styles from './game_card.module.css';
 import { motion } from "framer-motion";
+
 
 const GameCard = ({ game_info, display }) => {
 
@@ -23,23 +25,24 @@ const meta_rating_color = game_info.metacritic >= '80' ? 'green' : 'orange';
             whileInView={{ opacity: 1, marginTop: 0 }}
             transition={{ duration: 0.8}}
             viewport={{ once: true }}>
-            <div className={`game__card ${card_type}`}>
-                <div className='game__card__img'>
+            <div className={styles.game__card + ' ' + card_type}>
+                <div className={styles.game__card__img}>
                     <div>
                        { game_info.background_image && <Image src={game_info.background_image} alt="" width="280" height="155" /> }
                     </div>
                 </div>
-                <div className="game__card__info">
+                <div className={styles.game__card__info}>
                     <div className="flex justify-between items-start">
                         <h4>{game_info.name}</h4>
                         {game_info.metacritic && <div className="game__card__meta_score" title="Metascore"><span className={`meta_rating--`+meta_rating_color}>{game_info.metacritic}</span></div> }
                     </div>
-                    <div className="game__card__more">
+                    <div className={styles.game__card__more}>
                         <div>
-                            <div className="game__card__meta flex mt-5 mb-4">
+                            <div className={styles.game__card__meta}>
                                     {game_info.parent_platforms && game_info.parent_platforms?.map((platform, i) => {
                                     return( 
-                                    <div key={i} className={`game__card__platform game__card__platform--` + platform.platform.slug}></div>
+                                    <div key={i}>R</div>
+                                    // <div key={i} className={`game__card__platform game__card__platform--` + platform.platform.slug}></div>
                                     )
                                     })
                                 }
