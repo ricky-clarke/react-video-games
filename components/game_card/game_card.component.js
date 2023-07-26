@@ -23,7 +23,6 @@ const meta_rating_color = game_info.metacritic >= '80' ? 'green' : 'orange';
             whileInView={{ opacity: 1, marginTop: 0 }}
             transition={{ duration: 0.8}}
             viewport={{ once: true }}>
-            {/* <div className={`game__card ${card_type}`}> */}
                 <GameCardContainer display_type={card_type} className="game__card">
                     <div className="card_img">
                         <div>
