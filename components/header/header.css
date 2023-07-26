@@ -9,7 +9,7 @@ header.page__container {
     gap:1em;
     inset: 0;
     opacity: 0;
-    padding:2em;
+    padding:8em 2em;
     position: fixed;
     width: 100%;
     visibility: hidden;
