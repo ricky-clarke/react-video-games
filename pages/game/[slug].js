@@ -1,8 +1,7 @@
 import PageHeader from "../../components/page-header/page-header.component"
 import Image from "next/image";
 import GameScreenshots from "../../components/game-screenshots/game-screenshots.components";
-import { SingleGameGrid, SingleGameAbout, SingleGameMeta } from './game.styles';
-// import './game.css'
+import { SingleGameGrid, SingleGameAbout, SingleGameMeta } from '../../app/game.styles';
 
 export default function Game( { data }) {
 
