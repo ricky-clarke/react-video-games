@@ -16,6 +16,9 @@ const Hamburger = () => {
             document.body.classList.remove('menu_open');
         }
 
+        dispatch({type:"SEARCH", payload: false });
+        document.body.classList.remove('search_open');
+
     }
 
     return ( 

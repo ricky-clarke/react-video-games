@@ -1,6 +1,5 @@
 header.page__container {
     padding-block: 2em;
-    position: relative;
   }
 
 .navigation {
@@ -16,6 +15,16 @@ header.page__container {
     visibility: hidden;
     z-index: 9;
     transition: 0.3s opacity ease;
+}
+
+.navigation a {
+  font-size:1.2em;
+}
+
+@media(min-width:1280px) { 
+  .navigation a {
+    font-size:1em;
+  }
 }
 
 @media(min-width:1280px) {

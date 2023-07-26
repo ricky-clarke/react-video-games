@@ -1,7 +1,8 @@
 export const INITIAL_STATE = {
   contrastButton : 'dark',
   displayButton : 'grid',
-  menuOpen : false
+  menuOpen : false,
+  searchOpen : false
 };
 
 // update state return new version of state
@@ -23,6 +24,11 @@ export const GlobalReducer = (state, action) => {
                 return {
                   ...state,
                   menuOpen: action.payload
+                };
+            case "SEARCH":
+                return {
+                   ...state,
+                   searchOpen: action.payload
                 };
         default:
           return state;
