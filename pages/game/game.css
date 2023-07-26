@@ -1,0 +1,98 @@
+/* .game_bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80%;
+    inset: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index:-1;
+}
+
+.game_bg:after {
+    background: rgb(21,21,21);
+    background: linear-gradient(0deg, rgba(21,21,21,1) 19%, rgba(21,21,21,0.8155637254901961) 77%, rgba(21,21,21,0) 100%);
+    content:"";
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.single_game__grid {
+     background-color: #151515; 
+}
+
+.single_game__grid img {
+    border-radius: 12px;
+    margin-bottom:2em; 
+    width: 100%;
+}
+
+.single_game__grid h2 {
+    font-size:2.5em;
+    font-weight: 700;
+    margin:0 0 0.25em 0;
+}
+
+.single_game__grid h3 {
+    font-size:1.5em;
+    font-weight: 700;
+    margin:0 0 0.25em 0;
+}
+
+.game_grid__about {
+    max-height: 355px;
+    overflow-y: auto;
+    padding-right:2em;
+}
+
+  /* width 
+  .game_grid__about::-webkit-scrollbar {
+    width: 3px;
+}
+
+.game_grid__about::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.game_grid__about::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+.game_grid__about::-webkit-scrollbar-thumb:hover {
+    background: gold;
+}
+
+.game_grid__about p {
+    font-size:1.1em;    
+    line-height: 1.6em;
+    margin:0 0 1em 0;
+    white-space: break-spaces;
+}
+
+.single_game__meta {
+    border-top:1px solid #333;
+    color:#f0f0f0;
+    font-size:1em;
+    margin:2em 0;
+    padding:2em 0;
+}
+
+body.theme-light .single_game__meta {
+    color:#202020;
+}
+
+.single_game__meta .game__card__platform {
+    height: 25px;
+    margin-right: 1em;
+    width: 25px;
+}
+
+.single_game__meta > div:not(:first-child) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:0.25em;
+} */
