@@ -12,37 +12,11 @@ export const GameCardMore = styled.div`
     }
 `;
 
-
-
-// export const GameCardImg = styled.div`
-//     width: 100%;
-//     overflow: hidden;
-//     border-top-left-radius: 12px;
-//     border-top-right-radius: 12px;
-
-//     & > div {
-//         height: 0;
-//         overflow: hidden;
-//         padding-bottom: 56.25%;
-//         position: relative;
-//         width: 100%;
-//         transition: padding-bottom 0.2s;
-
-//         img {
-//             height: 100%;
-//             inset: 0;
-//             object-fit: cover;
-//             position: absolute;
-//             width: 100%;
-//         }
-//     }
-// `;
-
 export const GameCardInfo = styled.div`
     padding:16px 16px 24px;
 
     h4 {
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 700;
         line-height: 32px;
         margin-bottom: 0;
@@ -50,6 +24,11 @@ export const GameCardInfo = styled.div`
         padding-bottom: 2px;
         text-overflow: ellipsis;
         width: 75%;
+
+        @media(min-width:768px) {
+            font-size: 25px;
+        }
+
     }
 `;
 
@@ -84,7 +63,6 @@ export const GameCardGenre = styled.div`
 `;
 
 export const GameCardContainer = styled.div`
-
     border-radius: 12px;
     background-color: #202020;
     position: relative;
@@ -125,6 +103,8 @@ export const GameCardContainer = styled.div`
         position: absolute;
         width: 100%;
     }
+
+    @media(min-width:768px) {
     
     ${props => props.display_type == "game__card--row" &&
     `   display: flex; gap:2em; 
@@ -146,6 +126,8 @@ export const GameCardContainer = styled.div`
             font-size:1em;
             grid-template-rows: 1fr;
         }
+
+    }
         
     `};
 

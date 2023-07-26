@@ -27,7 +27,7 @@ const meta_rating_color = game_info.metacritic >= '80' ? 'green' : 'orange';
                 <GameCardContainer display_type={card_type} className="game__card">
                     <div className="card_img">
                         <div>
-                        { game_info.background_image ? <Image src={game_info.background_image} alt="" width="280" height="155" /> : <Image src="/placeholder-image.jpg"width="280" height="155" alt=""/> }
+                        { game_info.background_image ? <Image src={game_info.background_image} alt="" width="280" height="155" /> : <Image src="/placeholder-image.jpeg"width="280" height="155" alt=""/> }
                         </div>
                     </div>
                     <GameCardInfo>

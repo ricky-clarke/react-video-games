@@ -37,11 +37,15 @@ header.page__container {
 
 }
 
-.menu_open .navigation{
+.menu_open .navigation {
   display: flex;
   opacity: 1;
   visibility: visible;
   transition: 0.3s opacity ease;
+}
+
+body.theme-light .navigation {
+    background-color: #e0e0e0;
 }
 
 /* @media (min-width: 12px) {

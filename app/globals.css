@@ -104,6 +104,10 @@ main {
   background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMSAxOCc+PHBhdGggZmlsbD0nI0ZGRicgZD0nTTkuNTM4IDBIMS42NTFDLjg5NiAwIC4yODcuNTg3LjI4NyAxLjMxdjE1LjM2OGMwIC43MjMuNjEgMS4zMSAxLjM2NCAxLjMxaDcuODg3Yy43NTQgMCAxLjM2NC0uNTg3IDEuMzY0LTEuMzFWMS4zMWMwLS43MjMtLjYxLTEuMzEtMS4zNjQtMS4zMXptLTUuODkuNzk2aDMuODk0Yy4wOTggMCAuMTc4LjE0LjE3OC4zMTUgMCAuMTc0LS4wOC4zMTYtLjE3OC4zMTZIMy42NDhjLS4wOTkgMC0uMTc3LS4xNDItLjE3Ny0uMzE2IDAtLjE3NC4wNzgtLjMxNS4xNzctLjMxNXptMS45NDcgMTUuODk4Yy0uNDggMC0uODctLjM3NS0uODctLjgzNiAwLS40NjIuMzktLjgzNS44Ny0uODM1cy44Ny4zNzMuODcuODM1YzAgLjQ2MS0uMzkuODM2LS44Ny44MzZ6TTkuODggMTMuODNIMS4zMVYyLjIxaDguNTd2MTEuNjJ6Jy8+PC9zdmc+);
 }
 
+body.theme-light .game__card__platform {
+  filter: brightness(0.4);
+}
+
 .toggle_buttons {
   background-color: #323232;
   border-radius: 6px;
@@ -149,105 +153,6 @@ body.theme-light  .game__card__more {
 
 /* Single game*/
 
-.game_bg {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80%;
-  inset: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index:-1;
-}
-
-.game_bg:after {
-  background: rgb(21,21,21);
-  background: linear-gradient(0deg, rgba(21,21,21,1) 19%, rgba(21,21,21,0.8155637254901961) 77%, rgba(21,21,21,0) 100%);
-  content:"";
-  height: 100%;
-  inset: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  /* z-index:-1; */
-}
-
-.single_game__grid {
-   background-color: #151515; 
-}
-
-.single_game__grid img {
-  border-radius: 12px;
-  margin-bottom:2em; 
-  width: 100%;
-}
-
-.single_game__grid h2 {
-  font-size:2.5em;
-  font-weight: 700;
-  margin:0 0 0.25em 0;
-}
-
-.single_game__grid h3 {
-  font-size:1.5em;
-  font-weight: 700;
-  margin:0 0 0.25em 0;
-}
-
-.game_grid__about {
-  max-height: 355px;
-  overflow-y: auto;
-  padding-right:2em;
-}
-
-/* width */
-.game_grid__about::-webkit-scrollbar {
-  width: 3px;
-}
-
-/* Track */
-.game_grid__about::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-/* Handle */
-.game_grid__about::-webkit-scrollbar-thumb {
-  background: #333;
-}
-
-/* Handle on hover */
-.game_grid__about::-webkit-scrollbar-thumb:hover {
-  background: gold;
-}
-
-.game_grid__about p {
-  font-size:1.1em;    
-  line-height: 1.6em;
-  margin:0 0 1em 0;
-  white-space: break-spaces;
-}
-
-.single_game__meta {
-  border-top:1px solid #333;
-  color:#f0f0f0;
-  font-size:1em;
-  margin:2em 0;
-  padding:2em 0;
-}
-
 body.theme-light .single_game__meta {
   color:#202020;
-}
-
-.single_game__meta .game__card__platform {
-  height: 25px;
-  margin-right: 1em;
-  width: 25px;
-}
-
-.single_game__meta > div:not(:first-child) {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom:0.25em;
 }

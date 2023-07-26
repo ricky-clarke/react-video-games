@@ -6,7 +6,7 @@ const MasonryWrap = ({ children  }) => {
     const breakpointColumnsObj = {
         default: 4,
         1100: 3,
-        700: 2,
+        900: 2,
         500: 1
       };
 
