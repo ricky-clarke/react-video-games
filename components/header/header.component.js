@@ -55,6 +55,9 @@ const Header = () => {
                         <Link href="/coming-soon/" onClick={CloseNav}>Coming soon</Link>
                         <div className="sm:hidden">
                             <ToggleContrast />
+                            <br/>
+                            <br/>
+                            <ToggleDisplay />
                         </div>
                     </nav>
                     <SearchForm />
