@@ -11,20 +11,11 @@ header.page__container {
     opacity: 0;
     padding:8em 2em;
     position: fixed;
+    text-align: right;
     width: 100%;
     visibility: hidden;
     z-index: 9;
     transition: 0.3s opacity ease;
-}
-
-.navigation a {
-  font-size:1.2em;
-}
-
-@media(min-width:1280px) { 
-  .navigation a {
-    font-size:1em;
-  }
 }
 
 @media(min-width:1280px) {
@@ -38,6 +29,7 @@ header.page__container {
     opacity: 1;
     padding:0;
     position: relative;
+    text-align: left;
     width: 100%;
     visibility: visible;
     z-index: 9;
@@ -45,6 +37,18 @@ header.page__container {
 }
 
 }
+
+
+.navigation a {
+  font-size:1.2em;
+}
+
+@media(min-width:1280px) { 
+  .navigation a {
+    font-size:1em;
+  }
+}
+
 
 .menu_open .navigation {
   display: flex;

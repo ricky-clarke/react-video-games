@@ -8,6 +8,7 @@ import ToggleContrast from '../toggle-contrast/toggle-contrast.component';
 import ToggleDisplay from '../toggle-display/toggle-display.component';
 import Hamburger from '../hamburger/hamburger.component';
 import SearchIcon from '../svgs/search-icon';
+import HomeIcon from '../svgs/home-icon';
 import './header.css';
 
 const Header = () => {
@@ -22,7 +23,6 @@ const Header = () => {
         setTimeout(() => {
             document.body.classList.remove('menu_open');
         }, 500)
-
 
     }
 
@@ -47,9 +47,10 @@ const Header = () => {
           
             <header className='page__container flex items-center justify-between gap-4 full_container'>
                 <div className='flex gap-5 items-center'>
-                    <Link className='xl:hidden mr-2' href="/">Home</Link>
+                    <Link className='xl:hidden mr-2' href="/" aria-label="Home page"><HomeIcon/></Link>
                     <nav className='navigation mr-8'>
-                        <Link href="/" onClick={CloseNav}>Home</Link>
+                        <Link href="/" className="hidden xl:block" onClick={CloseNav} aria-label="Home page"><HomeIcon /></Link>
+                        <Link href="/" className="xl:hidden" onClick={CloseNav} aria-label="Home page">Home</Link>
                         <Link href="/latest-releases/" onClick={CloseNav}>Latest</Link>
                         <Link href="/coming-soon/" onClick={CloseNav}>Coming soon</Link>
                         <div className="sm:hidden">
@@ -63,7 +64,8 @@ const Header = () => {
                             { router.pathname.includes('game') ? '' : <ToggleDisplay /> }
                             <ToggleContrast />
                         </div>
-                        <button className="mobile_search xl:hidden" onClick={MobileSearch} title="Search"><SearchIcon/></button>
+                        <button className="mobile_search xl:hidden" onClick={MobileSearch} title="Search">
+                            {state.searchOpen === false ? <SearchIcon/> : 'X' }</button>
                         <Hamburger />
                     </div>
                   

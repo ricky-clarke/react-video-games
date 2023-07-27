@@ -29,7 +29,7 @@ const meta_rating_color = game_info.metacritic >= '80' ? 'green' : 'orange';
                         { game_info.background_image ? <Image src={game_info.background_image} alt="" width="280" height="155" /> : <Image src="/placeholder-image.jpeg"width="280" height="155" alt=""/> }
                         </div>
                     </div>
-                    <GameCardInfo>
+                    <GameCardInfo className="card_info">
                         <div className="flex justify-between items-start">
                             <h4>{game_info.name}</h4>
                             {game_info.metacritic && <GameCardMeta title="Metascore"><span className={`meta_rating--`+meta_rating_color}>{game_info.metacritic}</span></GameCardMeta> }
