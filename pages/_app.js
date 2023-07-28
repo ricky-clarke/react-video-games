@@ -8,12 +8,17 @@ import '../app/globals.css'
 export default function MyApp({ Component, pageProps  }) {
 
     const router = useRouter();
+
+    // Scroll to top once exit animation complete
+    function handleExitComplete() {
+        window.scrollTo({ top: 0 })
+    }
    
   return (
         <>
         <GlobalStateProvider>
         <Header />
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
               <motion.div
                     key={router.route}
                     initial={{ x: -50, opacity: 0 }}
