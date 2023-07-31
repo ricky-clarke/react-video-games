@@ -61,14 +61,12 @@ body.theme-light .navigation {
     background-color: #e0e0e0;
 }
 
-/* @media (min-width: 12px) {
-
-  .navigation {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    width: auto;
+body.theme-light .navigation a svg {
+  fill: #151515;
 }
 
-} */
+@media (min-width: 1280px) { 
+    body.theme-light .navigation {
+      background-color: transparent;
+  }
+}

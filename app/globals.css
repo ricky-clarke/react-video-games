@@ -19,7 +19,6 @@
 body {
   background-color: #151515;
   color:#fff;
-  /* overflow-x: hidden; */
   transition: 0.3s background-color ease, 0.3s color ease;
 }
 
@@ -154,6 +153,11 @@ body.theme-light .game__card {
 body.theme-light  .game__card__more {
   color:#202020;
 }
+
+body.theme-light .card_info span {
+  border-color: #202020;
+    color:#202020;
+ }
 
 /* Single game*/
 

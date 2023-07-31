@@ -93,9 +93,17 @@ body.theme-light .search_form input[type="text"]{
    border-color: #202020;
 }
 
+body.theme-light .search_form svg path{
+    stroke: #202020;
+ }
+
 
 .search_form button {
     background-color: transparent;
     border:0;
     padding:0.5em 1em;
 }
+
+body.theme-light .search_form button {
+    background-color: transparent;
+ }
