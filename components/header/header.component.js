@@ -53,18 +53,12 @@ const Header = () => {
                         <Link href="/" className="xl:hidden" onClick={CloseNav} aria-label="Home page">Home</Link>
                         <Link href="/latest-releases/" onClick={CloseNav}>Latest</Link>
                         <Link href="/coming-soon/" onClick={CloseNav}>Coming soon</Link>
-                        <div className="sm:hidden">
-                            <ToggleContrast />
-                            <br/>
-                            <br/>
-                            <ToggleDisplay />
-                        </div>
                     </nav>
                     <SearchForm />
                     </div>
                     <div className='flex gap-5 items-center'>
-                       <div className='hidden sm:flex gap-5'>
-                            { router.pathname.includes('game') ? '' : <ToggleDisplay /> }
+                       <div className='inline-flex gap-5'>
+                            { router.pathname.includes('game') ? '' : <div className='hidden md:block'><ToggleDisplay /></div> }
                             <ToggleContrast />
                         </div>
                         <button className="mobile_search xl:hidden" onClick={MobileSearch} title="Search">

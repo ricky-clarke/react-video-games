@@ -21,7 +21,7 @@ const ToggleContrast = () => {
 
     return ( 
         <>
-            <div className='toggle_buttons inline-flex gap-4 mt-3 sm:mt-0'>
+            <div className='toggle_buttons inline-flex gap-4'>
               <button
               onClick={toggleLightHandler}
               className={`toggle_button ${state.contrastButton === 'light' ? 'button--active' : ''}`}>Light</button>

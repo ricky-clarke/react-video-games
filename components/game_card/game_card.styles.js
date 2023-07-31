@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const GameCardMore = styled.div`
     color:#f0f0f0;
-    font-size:0.825em;
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.2s;
@@ -17,7 +16,7 @@ export const GameCardInfo = styled.div`
     padding:16px 16px 24px;
 
     h4 {
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 700;
         line-height: 32px;
         margin-bottom: 0;
@@ -25,11 +24,6 @@ export const GameCardInfo = styled.div`
         padding-bottom: 2px;
         text-overflow: ellipsis;
         width: 75%;
-
-        @media(min-width:768px) {
-            font-size: 25px;
-        }
-
     }
 `;
 
@@ -116,6 +110,12 @@ export const GameCardContainer = styled.div`
 
         @media(min-width:768px) {
             gap:2em; 
+        }
+
+        h4 {
+            @media(max-width:600px) {
+            font-size:1.1em;
+            }
         }
 
         .card_img { 
