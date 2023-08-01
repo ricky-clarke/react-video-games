@@ -51,8 +51,6 @@ export default function Upcoming() {
 
         const target = event.target;
 
-        // const selected_month_dates = event.target.getAttribute('dates');
-
         MonthSelectedHandler(target.getAttribute('dates'));
         dateActiveHandler(target.value);
 
