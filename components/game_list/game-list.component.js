@@ -7,17 +7,13 @@ const GameList = ({data}) => {
 
     const { state } = useContext(globalContext);
 
-    const data_count = data['count']; // Get data result count
-
     return (
         <>
-        { // If no data returned
-        data_count > 0 ? 
 
-         state.displayButton === 'grid' ? 
+         { state.displayButton === 'grid' ? 
 
              <MasonryWrap>
-                {data && data.results?.map((game, i) => {
+                {data.results?.map((game, i) => {
                     return( 
                         <GameCard key={i} game_info={game}/>
                       )
@@ -30,9 +26,8 @@ const GameList = ({data}) => {
                     <GameCard key={i} game_info={game} display="game__card--row"/>
                     )
                     })
-                : 
-                <p>No games scheduled</p>
-            }
+         }
+            
         </>
     )
 

@@ -48,13 +48,13 @@ main {
   z-index:999;
 }
 
-.hamburger {
+/* .hamburger {
   background-color: #323232;
   border-radius: 6px;
   padding:0.5em 1em;
   position: relative;
   z-index:999;
-}
+} */
 
 .my-masonry-grid {
   display: -webkit-box; /* Not needed if autoprefixing */
