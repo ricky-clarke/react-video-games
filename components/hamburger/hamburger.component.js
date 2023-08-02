@@ -23,15 +23,11 @@ const Hamburger = () => {
     }
 
     return ( 
-            // <button className='xl:hidden hamburger' onClick={hamburgerHandler}>
-            //     {state.menuOpen == false ? 'Menu' : 'Close' }
-            // </button>
-
-                    <button class={`xl:hidden hamburger hamburger--slider ${state.menuOpen == true && 'is-active'}`}type="button" onClick={hamburgerHandler}>
-                        <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
+            <button className={`xl:hidden hamburger hamburger--slider ${state.menuOpen == true && 'is-active'}`}type="button" onClick={hamburgerHandler}>
+                <span className="hamburger-box">
+                <span className="hamburger-inner"></span>
+                </span>
+            </button>
      );
 }
  
