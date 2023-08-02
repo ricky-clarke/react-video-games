@@ -9,11 +9,10 @@ const GameList = ({data}) => {
 
     return (
         <>
-
-         { state.displayButton === 'grid' ? 
+         {  state.displayButton === 'grid' ? 
 
              <MasonryWrap>
-                {data.results?.map((game, i) => {
+                {data && data.results?.map((game, i) => {
                     return( 
                         <GameCard key={i} game_info={game}/>
                       )
@@ -26,8 +25,8 @@ const GameList = ({data}) => {
                     <GameCard key={i} game_info={game} display="game__card--row"/>
                     )
                     })
-         }
-            
+                }
+        
         </>
     )
 
