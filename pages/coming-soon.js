@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import PageHeader from "../components/page-header/page-header.component";
  import ComingSoonList from "../components/coming_soon_list/coming_soon_list.component";
  import ComingSoonListMonthly from "../components/coming_soon_list_monthly/coming_soon_list_monthly.component";
+ import ToggleDisplay from "../components/toggle-display/toggle-display.component";
 
 export default function Upcoming() {
 
@@ -89,6 +90,7 @@ export default function Upcoming() {
 			<PageHeader title="Coming soon" intro={`Released in ${monthSelected ? dataActiveFullMonth : 'Released in the next 30 days'} `}/>
         
             <div className="full_container">
+            <div className='md:hidden mb-7'><ToggleDisplay /></div>
                 <div className="flex flex-wrap gap-2 mb-7">    
                     {getDates && getDates?.map((dates, i) => {
 

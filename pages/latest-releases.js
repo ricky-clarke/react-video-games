@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PageHeader from "../components/page-header/page-header.component";
-// import LatestList from "../components/latest_list/latest_list.component";
 import GameList from "../components/game_list/game-list.component";
+import ToggleDisplay from "../components/toggle-display/toggle-display.component";
 
 export async function getServerSideProps() {
 
@@ -30,6 +30,7 @@ export default function LastestReleases({ data }) {
             </Head>
 			<PageHeader title="Latest releases" intro="Released within the last 30 days" />
             <div className="full_container">
+                <div className='md:hidden mb-7'><ToggleDisplay /></div>
                 <GameList data={data}/>
             </div>
         </>

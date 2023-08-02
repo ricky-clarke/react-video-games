@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import PageHeader from "../components/page-header/page-header.component";
 import GameList from "../components/game_list/game-list.component";
+import ToggleDisplay from "../components/toggle-display/toggle-display.component";
 
 export async function getServerSideProps() {
 
@@ -68,6 +69,8 @@ export default function Home( { data }) {
         <PageHeader title="Highest rated" intro="Highest rated games of all time"/>
 
         <div className="full_container">
+
+          <div className='md:hidden mb-7'><ToggleDisplay /></div>
 
             <div className="flex flex-wrap gap-2 mb-7">    
 
