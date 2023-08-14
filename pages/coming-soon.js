@@ -20,6 +20,10 @@ export default function Upcoming() {
     const [dateActive, dateActiveHandler] = useState(null); // Set button to active
     const [dataActiveFullMonth, dataActiveFullMonthHandler] = useState(null);
 
+    const [intro, introHandler] = useState({ 
+        date: ' ',
+    });
+
     // Will run whenever the 'currentMonth' state changes - get monthly game list
     useEffect(() => {
         
@@ -87,7 +91,8 @@ export default function Upcoming() {
                 <title>Coming soon</title>
                 <meta name='description' content='Games to be released within the next month'/>
             </Head>
-			<PageHeader title="Coming soon" intro={`Released in ${monthSelected ? dataActiveFullMonth : 'Released in the next 30 days'} `}/>
+			{/* <PageHeader title="Coming soon" intro={`Released in ${monthSelected ? dataActiveFullMonth : 'Released in the next 30 days'} `}/> */}
+          <PageHeader title="Coming soon" intro={monthSelected ? 'Released in ' +  dataActiveFullMonth : 'Released in the next 30 days'}/>
         
             <div className="full_container">
             <div className='md:hidden mb-7'><ToggleDisplay /></div>
