@@ -60,11 +60,6 @@ useEffect(() => {
 
                         {getPlatforms && getPlatforms.results?.map((platform, i) => {
 
-                        //    const test = platform.platforms;
-                      //      console.log(getPlatforms.results[1].platforms[0].name)
-
-                        //    console.log(test)
-
                         const test = i;
 
                             return(

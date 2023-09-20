@@ -17,7 +17,6 @@ const SearchResultList = ({search_term}) => {
       
     }, [search]);
 
-
     return ( 
         <>
             {search_terms && <GameList data={search_terms.items}/> }

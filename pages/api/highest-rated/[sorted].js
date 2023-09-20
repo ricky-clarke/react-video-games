@@ -2,8 +2,6 @@
 
     const { sorted } = req.query;
     const client_id = process.env.RAWG_API_KEY;
-
-   // const url  = `https://api.rawg.io/api/games?key=${client_id}&page=1&page_size=50&ordering=-metacritic`;
     
     try {
 
@@ -18,9 +16,6 @@
         res.status(200).json(data);
       }
       
-     // const data = await response.json();
-  
-     
 
     } catch (error) {
       res.status(500).json({ error: 'An error occurred' });
