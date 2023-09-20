@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { GlobalStateProvider } from '../context/global-context';
@@ -36,6 +37,7 @@ export default function MyApp({ Component, pageProps  }) {
               </motion.div>
           </AnimatePresence>
           <Footer />
+          <Analytics />
         </GlobalStateProvider>
         </>
   );
