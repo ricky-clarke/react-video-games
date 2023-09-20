@@ -27,6 +27,9 @@ body.theme-light {
   color:#151515;
 }
 
+.page__container--main {
+  min-height:100vh;
+}
 
 .full_container {
   padding-block: 1em;

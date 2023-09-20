@@ -2,8 +2,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { GlobalStateProvider } from '../context/global-context';
 import Header from '../components/header/header.component';
-// import Footer from '../components/footer/footer.component';
 import '../app/globals.css'
+import Footer from '../components/footer/footer.component';
 
 export default function MyApp({ Component, pageProps  }) {
 
@@ -30,12 +30,12 @@ export default function MyApp({ Component, pageProps  }) {
                         duration: 0.3
                       }}
                       >
-                  <div className='page__container'>
+                  <div className='page__container page__container--main'>
                     <Component {...pageProps} />
                 </div>
               </motion.div>
           </AnimatePresence>
-        {/* <Footer /> */}
+          <Footer />
         </GlobalStateProvider>
         </>
   );
