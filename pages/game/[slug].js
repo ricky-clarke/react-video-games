@@ -1,9 +1,7 @@
 import PageHeader from "../../components/page-header/page-header.component"
 import Image from "next/image";
-import Loading from "./loading";
 import GameScreenshots from "../../components/game-screenshots/game-screenshots.components";
 import { SingleGameGrid, SingleGameAbout, SingleGameMeta } from '../../app/game.styles';
-import { Suspense } from "react";
 
 export default function Game( { data }) {
 
@@ -19,30 +17,13 @@ export default function Game( { data }) {
       <>
         <PageHeader title={data.name} intro=""/>
          
+              {/* Mobile feature image */}
               {data.background_image &&  
-                        <div className="lg:hidden full_container">
-                        <Image
-                        src={data.background_image}
-                        alt=""
-                        className="rounded-xl"
-                        width="1000"
-                        height="500"
-                        loading="eager"
-                        style={{
-                          maxWidth: '100%',
-                          height: 'auto'
-                        }}
-                        />
-                    </div>
-                }
-              
-        <SingleGameGrid className="flex flex-col-reverse lg:flex-row single_game__grid full_container full_container--page">
-                <div className="lg:w-7/12">
-                  {data.background_image &&  
+                    <div className="lg:hidden full_container">
                     <Image
                     src={data.background_image}
                     alt=""
-                    className="hidden lg:block"
+                    className="rounded-xl"
                     width="1000"
                     height="500"
                     loading="eager"
@@ -51,9 +32,34 @@ export default function Game( { data }) {
                       height: 'auto'
                     }}
                     />
-                  }
-               
-                  { data.background_image_additional && <Image src={data.background_image_additional} alt="" width="1000" height="500" />  }
+                </div>
+              }
+              
+        <SingleGameGrid className="flex flex-col-reverse lg:flex-row single_game__grid full_container full_container--page">
+
+                <div className="lg:w-7/12">
+
+                    {data.background_image &&  
+                   
+                          <Image
+                            src={data.background_image}
+                            alt=""
+                            className="hidden lg:block"
+                            width="1000"
+                            height="500"
+                            loading="eager"
+                            style={{
+                              maxWidth: '100%',
+                              height: 'auto'
+                            }}
+                            />
+                    }
+                    
+
+                  { data.background_image_additional && 
+                      <Image src={data.background_image_additional} alt="" width="1000" height="500" /> 
+                   }
+                  
                   <GameScreenshots />
                 </div>
                 <div className="lg:w-5/12 lg:px-10">

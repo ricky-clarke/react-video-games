@@ -19,7 +19,7 @@ const meta_rating_color = game_info.metacritic >= '80' ? 'green' : 'orange';
     return ( 
         <>
         <motion.div
-            initial={{ opacity: 0.1, marginTop: 150}}
+            initial={{ opacity: 0, marginTop: 10 }}
             whileInView={{ opacity: 1, marginTop: 0 }}
             transition={{ duration: 0.8}}
             viewport={{ once: true }}>
