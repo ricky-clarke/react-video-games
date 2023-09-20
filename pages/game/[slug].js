@@ -78,7 +78,7 @@ export default function Game( { data }) {
                         {data.metacritic && <div><span className="font-bold">Metacritic rating</span> <span>{data.metacritic}</span></div> }
                         <div><span  className="font-bold">Released</span> <span>{data.released ? formattedDate : '-'}</span></div>
                         {data.developers[0]?.name && <div><span  className="font-bold">Developer</span><span>{data.developers[0]?.name}</span></div>}
-                        <div><span  className="font-bold">Publisher</span><span className="flex flex-col">
+                        <div><span  className="font-bold">Publisher</span><span className="flex flex-col md:items-end">
                           {data.publishers.map((publisher, i) => {
                               return( 
                               <span key={i} className="mb-1">{publisher.name}</span>
